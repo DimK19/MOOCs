@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<!-- 1. Δίνεται αρχείο final-test-template.html να γίνουν οι εξής αλλαγές:
+ * ο τίτλος να είναι "μάντεψε έναν αριθμό"
+ * το μέγεθος του text (κουτί εισαγωγής αριθμού) να είναι 5 χαρακτήρες
+ * να συνδεθεί η σελίδα με τα εξωτερικά αρχεία final-test-style.css και 
+ final-test-script.js τα οποία δίδονται και στα οποία θα πρέπει να γίνουν 
+ αλλαγές όπως ορίζεται στα αρχεία αυτά.
+ -->
+
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Τίτλος -->
+    <title>Μάντεψε έναν αριθμό</title>
+    <!-- Σύνδεση με αρχεία css και js -->
+    <link rel = "stylesheet" href = "final-test-style.css">
+    <script src = "final-test-script.js" defer></script>
+</head>
+<body>
+    <header>Παιχνίδι: μάντεψε τον αριθμό</header>
+    <section id="instructions">
+        Έχουμε διαλέξει ένα τυχαίο αριθμό μεταξύ 1 και 100. 
+        Προσπάθησε να τον μαντέψεις σε 10 το πολύ προσπάθειες.
+        Κάθε φορά θα σού λέμε αν ο αριθμός που μάντεψες είναι μεγαλύτερος
+        ή μικρότερος από τον σωστό αριθμό.
+    </section>
+    <section id="guess">
+        <label for="new-guess">Μάντεψε: </label>
+        <!-- Ορισμός του μεγέθους του κουτιού -->
+        <!-- Ενδέχεται το πλαίσιο να μην χωρά ακριβώς 5 χαρακτήρες, παρά τον ορισμό του size. Αυτό έχει να κάνει με διαφορές ανάμεσα σε browsers. -->
+        <input type="text" name="new-guess" id="new-guess" size = "5">
+        <button id="check"> Έλεγχος </button>
+
+    </section>
+    <section>
+        <p id="message">  </p>
+        <div id="low-high"></div>
+        <button id= "restart"> Παίξε ξανά </button>
+    </section>    
+</body>
+</html>

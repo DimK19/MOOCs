@@ -1,0 +1,66 @@
+:root {
+    --btn-color: teal;   /* χρώμα πλήκτρων */
+    --btn-text: whitesmoke;   /* χρώμα κειμένου πλήκτρων */
+    --msg-win-color: rgb(0, 128, 32);  /* χρώμα μηνύματος επιτυχίας */
+    --msg-wrong-color: crimson;  /* χρώμα μηνύματος αποτυχίας */
+    --msg-text:floralwhite;  /* χρώμα κειμένου μηνύματος */
+	--low-high-color: gray;  /* χρώμα ιστορικού προσπαθειών */
+    
+    font-family: sans-serif; /* γραμματοσειρά */
+}
+/* 
+
+8. Στο αρχείο stylesheet final-test-style.css να γίνουν οι κατάλληλες αλλαγές 
+που αφορούν στα στοιχεία που εμφανίζονται στον χρήστη, προσπαθώντας να επιτύχετε 
+το αποτέλεσμα που φαίνεται στην παρουσίαση. ιδιαίτερη αναφορά γίνεται ώστε το χρώμα 
+να οριστεί με βάση τα χρώματα που ορίζονται από τις μεταβλητές CSS. */
+
+/* Επικεφαλίδα */
+header {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+section {
+    margin-left: 1em;
+    margin-top: 0.4em;
+    font-size: 1.1em;
+}
+
+/* Και για τα δύο κουμπιά */
+button {
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    height: 2rem;
+    font-size: 120%;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Ειδικά για το κουμπί ελέγχου */
+#check {
+    width: 6rem;
+}
+
+#new-guess {
+    font-size: 1.2em;
+}
+
+/* Ειδικά για το κουμπί "Παίξε ξανά" */
+#restart {
+    width: 8rem;
+    display: none; /* αρχικά δεν θέλουμε να εμφανίζεται */
+    margin-left: -1rem; /* όλα τα στοιχεία μέσα στα sections, εκτός του restart button έχουν εσοχή προς τα δεξιά */
+}
+
+#message {
+    color: var(--msg-text);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#low-high {
+    color: var(--low-high-color);
+    margin-bottom: 1rem;
+}
