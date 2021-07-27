@@ -1,0 +1,173 @@
+/*
+Ενδεικτικοί επιλογείς για τη διαμόρφωση του στυλ
+
+Μπορείτε να προσθέσετε τις δηλώσεις στους παρακάτω κανόνες και να εμπλουτίσετε με δικούς σας κανόνες.
+*/
+
+
+/* Χρειάζεται για να φανούν οι σημαίες στους φυλλομετρητές chrome-based από Windows 10 */
+
+@font-face {
+    font-family: 'TwemojiMozilla';
+    src: url('TwemojiMozilla.ttf');
+}
+
+body {
+    margin: 40px;
+    font-family: 'Open Sans', 'TwemojiMozilla';
+    /* Η γραμματοσειρά open sans φορτώνεται στο αρχείο html*/
+    background-color: #fff;
+    color: #444;
+}
+
+.grid {
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 1%;
+	min-height: 100vh;
+}
+
+.game-panel {
+    /*display: grid;*/
+    /* ... */
+}
+
+@media (max-width: 800px) {
+    /* ενδεικτικά */
+    /*  ... */
+}
+
+#my-country {
+    background-color: gray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: pink;
+    border-radius: 5px;
+}
+
+#sidebar h2 {
+    color: white;
+    margin-left: 5%;
+    margin-top: 10%;
+    margin-bottom: 8%;
+    font-size: 1.5em;
+}
+
+#sidebar span {
+    color: white;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    font-size: 1.1em;
+}
+
+#score {}
+
+#neighbors-panel {
+    font-size: 10em;
+    border: 2px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.neighbor {
+    margin: 2%;
+    border-radius: 5px;
+}
+
+.subtitle {
+    font-size: 0.1em;
+    margin: 0 auto;
+	text-align: center;
+}
+
+.neighbor-flag {
+    margin: 0 auto;
+	text-align: center;
+}
+
+.neighbor:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.was-clicked.neighbor-is-valid {
+    border: 2px solid green;
+}
+
+.was-clicked.neighbor-is-invalid {
+    border: 2px solid red;
+}
+
+.neighbor:not(.was-clicked) {}
+
+#my-country-flag {
+    font-size: 10em;
+    margin: auto 2%;
+    box-shadow: 5px white;
+}
+
+#my-country-name {
+    font-size: 5em;
+    color: white;
+    margin: auto 1%;
+}
+
+#next-round-panel {}
+
+#progress {
+    border-radius: 5px;
+    height: 3vh;
+    background-color: lightgray;
+	margin-top: 0.8%;
+	margin-bottom: 0.8%;
+}
+
+#progress-bar {
+	width: 100%;
+	height: 100%;
+}
+
+
+/* ειδικά για τους φυλλομετρητές που προέρχονται από τον chrome καθώς 
+υποστηρίζουν λιγότερο καλά το στοιχείο progress από ότι ο firefox,
+όσον αφορά το CSS (που και σε αυτόν έχει προβληματική υποστήριξη)
+*/
+
+#progress::-webkit-progress-bar {
+    border-radius: 5px;
+}
+
+
+#btn-new-game, #btn-next-round {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 110%;
+    border-radius: 5px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    border: none;
+}
+
+#btn-new-game:hover, #btn-next-round:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+#result-text {
+	position: absolute;
+	top: 70%;
+	left: 60%;
+	transform: translate(-100%, -100%);
+}
