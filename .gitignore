@@ -1,0 +1,4 @@
+*.json
+__pychache__/
+movies_images/
+profiles_images/
