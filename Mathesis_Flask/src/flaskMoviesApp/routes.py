@@ -85,6 +85,9 @@ def signup():
 
     ## Έλεγχος για το αν ο χρήστης έχει κάνει login ώστε αν έχει κάνει,
     ## να μεταφέρεται στην αρχική σελίδα
+    if(current_user.is_authenticated):
+        return redirect(url_for("root"))
+
     """Create an instance of the Sign Up form"""
     form = SignupForm()
 

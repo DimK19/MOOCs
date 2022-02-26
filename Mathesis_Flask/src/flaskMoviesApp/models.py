@@ -25,7 +25,7 @@ class Movie(db.Model):
     id = db.Column(db.Integer, primary_key = True) ## δήλωση id ταινίας, πρωτεύον κλειδί
     title = db.Column(db.String(50), nullable = False) ## δήλωση τίτλου (50 χαρακτήρες), υποχρεωτικό πεδίο
     plot = db.Column(db.Text(), nullable = False) ## δήλωση υπόθεσης ταινίας (κείμενο με απεριόριστο αριθμό χαρακτήρων), υποχρεωτικό πεδίο
-    image = db.Column(db.String(40), nullable = False, default = "default_movie_image.png") ## δήλωση ονόματος εικόνας ταινίας (40 χαρακτήρες) με προεπιλεγμένο τίτλο:'default_movie_image.png', ΜΗ υποχρεωτικό πεδίο
+    image = db.Column(db.String(40), nullable = True, default = "default_movie_image.png") ## δήλωση ονόματος εικόνας ταινίας (40 χαρακτήρες) με προεπιλεγμένο τίτλο:'default_movie_image.png', ΜΗ υποχρεωτικό πεδίο
     rating = db.Column(db.Integer, nullable = False, default = 1) ## Integer, δήλωση πεδίου βαθμολογίας ταινίας, με προεπιλεγμένη τιμή το μηδέν: default=1, υποχρεωτικό πεδίο
     release_year = db.Column(db.Integer, nullable = False, default = 2000) ## Integer, δήλωση πεδίου χρονιάς πρώτης προβολής της ταινίας με προεπιλεγμένη τιμή default=2000, υποχρεωτικό πεδίο
     ## TODO why not function call of utcnow
