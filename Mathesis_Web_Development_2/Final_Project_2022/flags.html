@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Βρες τους γείτονες</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="countries.js">
+    </script>
+	<!-- Ο κώδικας διαχείρισης του παιγνίου σε ξεχωριστό αρχείο .js -->
+    <script src = "script.js" defer>
+    </script>
+</head>
+
+<body class = "grid">
+    <div id = "sidebar">
+        <h2>Βρες τους γείτονες</h2>
+		<div class="line-justified">Γύρος: <span id = "round">1</span></div>
+		<div class="line-justified">Σκορ: <span id = "score">0<span></div>
+		<div class="buttons">
+			<button id="btn-next-round">Επόμενη χώρα</button>
+			<button id="btn-new-game">Νέο παιχνίδι</button>
+		</div>
+    </div>
+
+    <div class = "game-panel">
+        <!--
+                Γράψτε εδώ τον κώδικα HTML που χρειάζεστε για το παιχνίδι.
+                Κάποια από τα στοιχεία (elements) της σελίδας προστίθενται και
+                αφαιρούνται δυναμικά, μέσα από τη JavaScript, π.χ. οι σημαίες
+                των γειτονικών χωρών κ.ά.
+            -->
+
+
+        <div id = "my-country">
+            <div id = "my-country-flag">
+            </div>
+            <div id = "my-country-name">
+            </div>
+        </div>
+
+		<div id = "stickTop">
+			<div id = "progress">
+				<progress id = "progress-bar" max = "100" value = "0"></progress>
+			</div>
+		</div>
+
+		<div id = "container-main">
+			<div id = "next-round-panel"></div>
+			<div id = "neighbors-panel"></div>
+		</div>
+
+    </div>
+</body>
+
+<script>
+//Το παρακάτω αφορά μόνο τους χρήστες macOS.
+if (navigator.appVersion.indexOf("Macintosh")>0){
+  document.body.style.fontFamily = '"Open Sans"';
+}
+</script>
+</html>

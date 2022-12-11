@@ -1,0 +1,257 @@
+/*
+Ενδεικτικοί επιλογείς για τη διαμόρφωση του στυλ
+
+Μπορείτε να προσθέσετε τις δηλώσεις στους παρακάτω κανόνες και να εμπλουτίσετε με δικούς σας κανόνες.
+*/
+
+
+/* Χρειάζεται για να φανούν οι σημαίες στους φυλλομετρητές chrome-based από Windows 10 */
+
+@font-face {
+    font-family: 'TwemojiMozilla';
+    src: url('TwemojiMozilla.ttf');
+}
+
+body {
+    margin: 40px;
+    font-family: 'Open Sans', 'TwemojiMozilla';
+    /* Η γραμματοσειρά open sans φορτώνεται στο αρχείο html*/
+    background-color: #fff;
+    color: #444;
+}
+
+.grid {
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    column-gap: 1%;
+}
+
+.game-panel {
+	display: grid;
+	grid-template-rows: 150px 40px auto;
+}
+
+/* Για την απαιτούμενη συμπεριφορά σε μικρές οθόνες */
+@media (max-width: 800px) {
+	/* ενδεικτικά */
+	/*  ... */
+	.grid {
+		grid-template-columns: auto;
+	}
+}
+
+#my-country {
+    background-color: slategray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: deeppink;
+    border-radius: 5px;
+	color: white;
+}
+
+#sidebar h2 {
+    color: white;
+    margin-left: 5%;
+    margin-top: 10%;
+    margin-bottom: 8%;
+    font-size: 2em;
+}
+
+#sidebar span {
+    color: white;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    font-size: 1.1em;
+}
+
+#score {}
+
+.line-justified {
+	display: flex;
+	justify-content: space-between;
+	font-size: x-large;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/*
+#neighbors-panel {
+    font-size: 8em;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.neighbor {
+    margin: 2%;
+    border-radius: 5px;
+}
+*/
+#neighbors-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
+.neighbor {
+  width: 150px;
+  margin: 10px;
+  padding: 1em;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.neighbor-flag {
+  font-size: 8em;
+  text-shadow: 0 0 12px black;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin: 0 auto;
+	text-align: center;
+}
+
+.neighbor-flag {
+    margin: 0 auto;
+	text-align: center;
+    text-shadow: 1px 0 8px #303030;
+}
+
+.neighbor:hover {
+    cursor: pointer;
+}
+
+.was-clicked.neighbor {
+	background-color: rgba(220, 220, 220, 0.8);
+}
+
+.was-clicked.neighbor-is-valid {
+    border: 3px solid green;
+}
+
+.was-clicked.neighbor-is-invalid {
+    border: 3px solid red;
+}
+
+.neighbor:not(.was-clicked) {}
+
+#my-country-flag {
+    font-size: 6em;
+    margin: auto 2%;
+    text-shadow: #FFF 1px 0 10px;
+}
+
+#my-country-name {
+    font-size: 3em;
+    color: white;
+    margin: auto 1%;
+}
+
+#container-main {
+	/* Περιλαμβάνει τα #next-round-panel και #neighbours-panel 
+	Για να επικαλυφθεί το #neighbours-panel από το #next-round-panel 
+	πρέπει το #container να έχει position: relative
+	και το #next-round-panel να έχει posistion: absolute */
+	position: relative;
+	overflow: auto;
+	height: 100%;
+}
+
+#next-round-panel {
+	/* Ημιδιαφανής κάρτα πάνω στους γείτονες, όταν λήγει ο γύρος */
+	position: absolute;
+	z-index: 20;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(130, 130, 130, 0.8);
+	border-radius: 5px;
+	font-weight: 900;
+	/* Center the text */
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+#progress {
+    border-radius: 5px;
+    height: 40px; /* 3vh; */
+    /*background-color: lightgray;*/
+	margin-top: 0.3%;
+	margin-bottom: 1.2%;
+}
+
+#progress-bar {
+	width: 100%;
+	height: 100%
+}
+
+/* ειδικά για τους φυλλομετρητές που προέρχονται από τον chrome καθώς
+υποστηρίζουν λιγότερο καλά το στοιχείο progress από ότι ο firefox,
+όσον αφορά το CSS (που και σε αυτόν έχει προβληματική υποστήριξη)
+*/
+
+#progress::-webkit-progress-bar {
+    border-radius: 5px;
+}
+
+/* container του progress. Το sticky δεν δουλεύει αν μπει κατευθείαν στο #progress. */
+/* Όπως φαίνεται στο βίντεο, η progress bar πρέπει να παραμένει στην κορυφή της οθόνης. */
+#stickTop { 
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+#btn-next-round {
+	/*margin-top: 150%;*/
+	margin-bottom: 1%;
+}
+
+#btn-new-game {
+	margin-top: 1%;
+	margin-bottom: 10%;
+}
+
+#btn-new-game, #btn-next-round {
+    padding-top: 8%;
+    padding-bottom: 8%;
+    font-size: 120%;
+    border-radius: 5px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    border: none;
+	width: 100%;
+}
+
+#btn-new-game:hover, #btn-next-round:hover:enabled {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.buttons {
+	width: 80%;
+	margin: auto;
+}
+
+/* στοιχίζει τα πλήκτρα στο κάτω μέρος του sidebar*/
+.buttons:last-of-type {
+	margin-top: auto;
+}
+
+#result-text {
+	position: relative;
+	top: 5%;
+	left: 15%;
+	/*transform: translate(-100%, -100%);*/
+	z-index: 50;
+}
