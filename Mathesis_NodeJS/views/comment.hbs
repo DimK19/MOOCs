@@ -1,0 +1,69 @@
+<form action="/comment/{{book.title}}" method="post" class="myForm">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col">
+                <h1>Σχόλια</h1>
+            </div>
+        </div>
+        <fieldset class="border p-2 mb-3">
+            <legend class="w-auto">Προσθέσατε το σχόλιό σας</legend>
+            <div class="row mb-3">
+                <div class="col-md-2 col-sm-12 justify-content-end d-flex">
+                    <label for="newBookTitle" class="col-form-label">Τίτλος</label>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <input type="text" class="form-control" id="book" value="{{book.title}}" name="bookID" required readonly>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-2 col-sm-12 justify-content-end d-flex">
+                    <label for="newBookAuthor" class="col-form-label">Συγγραφέας</label>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <input type="text" class="form-control" id="author" value="{{book.author}}" name = "author" required readonly>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-2 col-sm-12 justify-content-end d-flex">
+                    <label for="newComment" class="col-form-label">Σχόλιο</label>
+                </div>
+                <div class="col-md-10 col-sm-10 position-relative">
+                    <input type="text" class="form-control {{#if message.comment}} is-invalid {{/if}}" id="newComment" name="comment" {{#if userComment}} value = "{{userComment}}" {{/if}} {{#unless userComment}} placeholder="Το σχόλιό σας" {{/unless}} required>
+                    <div class="valid-feedback"> Μια χαρά! </div>
+                    <div class="invalid-feedback">{{message.comment.msg}} </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="row mb-3">
+            <div class="col">
+                <button type="submit" class="btn btn-primary mb-3">Υποβολή</button>
+            </div>
+        </div>
+    </div>
+    {{#if comments}}
+    <div class="border p-2 mb-3">
+        <h2>Άλλοι είπαν...</h2>
+        <div class="table-responsive-sm">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Μέλος</th>
+                        <th>Σχόλιο</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each comments}}
+                        <tr>
+                            <td>{{this.UserName}}</td>
+                            <td>{{this.comment}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{/if}}
+    {{#unless comments }}
+        <h3> Δεν υπάρχουν άλλα σχόλια για τον τίτλο αυτόν...</h3>
+    {{/unless}}
+</form>
