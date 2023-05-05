@@ -1,0 +1,16 @@
+@startuml
+
+skin rose
+
+User -up-> (1 - List media)
+User -up-> (2 - Search for a medium)
+User -left-> (3 - Add new book)
+User -down-> (4 - Add new disk)
+(4 - Add new disk) .down.> (4-1 - Add new data disk)
+(4 - Add new disk) .down.> (4-2 - Add new Music CD)
+(4 - Add new disk) .down.> (4-3 - Add new Video DVD)
+User -right-> (5 - Edit medium)
+User -right-> (6 - Delete medium)
+User -left-> (0 - Exit)
+
+@enduml

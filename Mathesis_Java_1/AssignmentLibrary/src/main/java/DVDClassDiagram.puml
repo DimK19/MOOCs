@@ -1,0 +1,26 @@
+@startuml
+enum Genre {
+    UNCATEGORIZED, ACTION, COMEDY, DOCUMENTARY, DRAMA, FANTASY, HORROR, ROMANCE, SCIFI, THRILLER;
+}
+
+class Disk
+
+class DVD {
+    - genre : Genre
+    - length : int {0-360}
+    + Genre getGenre()
+    + void setGenre(Genre gen)
+    + int getLength()
+    + void setLength(int len)
+    + void setPublicationYear(int pubYear)
+    + String toShortString()
+    + String toString()
+}
+
+note right of DVD::length 
+   in minutes 
+end note
+
+DVD *--> Genre
+DVD -up-|> Disk
+@enduml

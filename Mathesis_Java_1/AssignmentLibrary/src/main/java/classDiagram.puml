@@ -1,0 +1,35 @@
+@startuml
+
+skin rose
+
+title eLibrary - Class Diagram
+
+package gr.cup.mathesis.elibrary.model <<Folder>> {
+  class Medium
+  class Book
+  class Disk
+  class CD
+  class DVD
+}
+
+note right of DVD
+    Αυτήν την κλάση πρέπει να υλοποιήσετε
+end note
+
+package gr.cup.mathesis.elibrary.model.library <<Folder>> {
+  interface ILibrary
+  class Library
+}
+package gr.cup.mathesis.elibrary <<Folder>> {
+  class Main
+}
+
+Medium <|-down- Book
+Medium <|-down- Disk
+Disk <|-down- CD
+Disk <|-down- DVD
+Library "0..*" *--> Medium
+Library .right.|> ILibrary
+Main -up-> ILibrary
+
+@enduml
