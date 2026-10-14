@@ -1,0 +1,5 @@
+set javac="C:\Users\KYRIAKOS\Downloads\jdk-21.0.12.1+1\bin\javac.exe"
+set java="C:\Users\KYRIAKOS\Downloads\jdk-21.0.12.1+1\bin\java.exe"
+
+%javac% -cp "..\courserajava.jar;..\apache-csv.jar;." VigenereBreaker.java
+%java% -cp "..\courserajava.jar;..\apache-csv.jar;." VigenereBreaker
